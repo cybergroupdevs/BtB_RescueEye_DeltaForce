@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>$TITLE</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class='container'>
+   <div class="row">
+   	<form method="get">
+		<div class="form-group">	
+		<div class="col-md-3"><label class="btn btn-primary"><img src="./assets/leftArrow.png" alt="..." class="img-thumbnail img-check"><input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off"></label> <div class="col text-center font-weight-bold">Left Vision</div> </div>
+		<div class="col-md-3"><label class="btn btn-primary"><img src="./assets/rightArrow.png" alt="..." class="img-thumbnail img-check"><input type="checkbox" name="chk2" id="item4" value="val2" class="hidden" autocomplete="off"></label><div class="col text-center font-weight-bold">Right Vision</div></div>
+		<div class="col-md-3"><label class="btn btn-primary"><img src="./assets/OpenEye.jpg" alt="..." class="img-thumbnail img-check"><input type="checkbox" name="chk3" id="item4" value="val3" class="hidden" autocomplete="off"></label> <div class="col text-center font-weight-bold">Open Eye Straight Vision</div></div>
+		<div class="col-md-3"><label class="btn btn-primary"><img src="./assets/CloseEye.png" alt="..." class="img-thumbnail img-check"><input type="checkbox" name="chk4" id="item4" value="val4" class="hidden" autocomplete="off"></label><div class="col text-center font-weight-bold">Closed Eye Vision</div></div>
+
+		</div>
+				
+		</form>
+
+	   </div>
+     <div class="row margin">
+       <form class="dropzone dz-clickable" action="#" id="myDropzone">
+            <div class="dz-message ">
+              <span class="font-weight-bold">Drop files here or click to upload.</span>  
+            </div>
+        </form>
+     </div>
+        <div class="col text-center ">
+ <a href="#" class="btn btn-info btn-lg margin margin-left">
+          <img src="./assets/TrainIcon.png" alt="..." class="img-thumbnail img-check img"> Train Model
+        </a>
+        <a href="#" class="btn btn-success btn-lg margin margin-left">
+          <img src="./assets/DownloadIcon.png" alt="..." class="img-thumbnail img-check img"> Download Model
+        </a>
+    </div>
+  </div>
+</body>
+</html>
+<style type="text/css">
+	.check
+{
+    opacity:0.5;
+	color:#996;
+	
+}
+.img{
+  height: 100px;
+    width: 100px;
+}
+.margin{
+	margin-top: 40px;
+}
+.margin-left{
+      margin-left: 40px;
+}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(e){
+    		$(".img-check").click(function(){
+          var elems = document.querySelectorAll(".check");
+
+[].forEach.call(elems, function(el) {
+    el.classList.remove("check");
+});
+				$(this).toggleClass("check");
+			});
+			 Dropzone.options.myDropzone = {
+        addRemoveLinks: true,
+        paramName: "file",
+        maxFiles: 1,
+        init: function () {
+            this.hiddenFileInput.removeAttribute('multiple');
+            this.on("maxfilesexceeded", function (file) {
+                this.removeAllFiles();
+                this.addFile(file);
+            });
+            this.on("addedfile", function (file) {
+                if (this.files.length > 1) {
+                    this.files = this.files.slice(1, 2);
+                }
+            });
+        } ,
+      
+    };
+	});
+</script>
+    <script src="./js/dropzone.js"></script>
+    <link rel="stylesheet" href="./css/dropzone.css" />
