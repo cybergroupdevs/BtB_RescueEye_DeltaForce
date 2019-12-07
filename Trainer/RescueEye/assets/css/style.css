@@ -1,0 +1,519 @@
+* {
+  box-sizing: border-box;
+  /* font-family: 'Pacifico', cursive; */
+  font-family: "Roboto", sans-serif;
+}
+html,
+body {
+  height: 95vh;
+  background: rgb(250, 250, 250);
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100%;
+  margin: 0 2rem;
+}
+.header {
+  height: 15rem;
+}
+.center {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floating linear 2s infinite;
+}
+.center .box1 {
+  background: #ff6540;
+  color: #fff;
+  padding: 10px;
+  text-transform: capitalize;
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transform: perspective(1000px) rotateY(25deg) translate(30px, 5px);
+}
+.center .box1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 50px;
+  height: 100%;
+  background: #d24c2c;
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transform: perspective(1000px) rotateY(-80deg);
+}
+.center .box2 {
+  background: #57bd57;
+  color: #fff;
+  padding: 10px;
+  text-transform: capitalize;
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transform: perspective(1000px) rotateY(-25deg);
+}
+.center .box2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 50px;
+  height: 100%;
+  background: #358635;
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transform: perspective(1000px) rotateY(-25deg);
+}
+.center .box2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transform: perspective(1000px) rotateX(75deg);
+}
+@keyframes floating {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -30%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+.selection {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem;
+}
+.selection .choice {
+  height: 18rem;
+  width: 18rem;
+  margin: 0.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.selection .choice input {
+  margin: 1rem 0;
+}
+.selection .face {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: #ffcd00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.selection .face-sleep {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: #ffcd00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.face-sleep .eyes-sleep {
+  position: relative;
+  top: -15.5%;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.face-sleep .eyes-sleep .eye-sleep {
+  position: relative;
+  width: 30%;
+  height: 10%;
+  display: block;
+  margin: 0 3%;
+  background: #333;
+}
+.selection .face::before {
+  content: "";
+  position: absolute;
+  top: 62%;
+  width: 50%;
+  height: 23.33%;
+  background: #b57700;
+  border-radius: 0 0 50% 50%;
+  transition: 0.5s;
+}
+.face:hover::before {
+  top: 72%;
+  width: 50%;
+  height: 6.67%;
+  background: #b57700;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: 0.5s;
+}
+
+.selection .face-sleep::before {
+  content: "";
+  position: absolute;
+  top: 72%;
+  width: 50%;
+  height: 6.67%;
+  background: #b57700;
+  transition: 0.5s;
+}
+.face .eyes {
+  position: relative;
+  top: -15.5%;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.face .eyes .eye {
+  position: relative;
+  width: 30%;
+  height: 75%;
+  display: block;
+  margin: 0 3%;
+  border-radius: 50%;
+  background: #fff;
+}
+.face .eyes .eye::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 55%;
+  background: #333;
+  border-radius: 50%;
+}
+.face .eyes .eye-left {
+  position: relative;
+  width: 30%;
+  height: 75%;
+  display: block;
+  margin: 0 3%;
+  border-radius: 50%;
+  background: #fff;
+}
+.face .eyes .eye-left::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 55%;
+  background: #333;
+  border-radius: 50%;
+}
+.face .eyes .eye-right {
+  position: relative;
+  width: 30%;
+  height: 75%;
+  display: block;
+  margin: 0 3%;
+  border-radius: 50%;
+  background: #fff;
+}
+.face .eyes .eye-right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  height: 55%;
+  background: #333;
+  border-radius: 50%;
+}
+
+/*************** The container *************/
+.radio-container {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 90%;
+  width: 90%;
+  font-family: "Pacifico", cursive;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  background-color: #b57700;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #ffeb3b;
+}
+/*************** sleeping animation *************/
+.sleeping {
+  background: transparent;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 20%;
+  left: 115%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.sleeping span {
+  color: #333;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 80px;
+  opacity: 0;
+  -moz-animation: sleep 9s infinite linear;
+  -webkit-animation: sleep 9s infinite linear;
+  animation: sleep 9s infinite linear;
+}
+.sleeping span:nth-child(2n) {
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.sleeping span:nth-child(3n) {
+  -moz-animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+}
+
+@-webkit-keyframes sleep {
+  0% {
+    -moz-transform: translate(0, 0) scale(0.3);
+    -ms-transform: translate(0, 0) scale(0.3);
+    -webkit-transform: translate(0, 0) scale(0.3);
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  50% {
+    -moz-transform: translate(90%, -50%) scale(0.65);
+    -ms-transform: translate(90%, -50%) scale(0.65);
+    -webkit-transform: translate(90%, -50%) scale(0.65);
+    transform: translate(90%, -50%) scale(0.65);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: translate(180%, -100%) scale(1);
+    -ms-transform: translate(180%, -100%) scale(1);
+    -webkit-transform: translate(180%, -100%) scale(1);
+    transform: translate(180%, -100%) scale(1);
+    opacity: 0;
+  }
+}
+@-moz-keyframes sleep {
+  0% {
+    -moz-transform: translate(0, 0) scale(0.3);
+    -ms-transform: translate(0, 0) scale(0.3);
+    -webkit-transform: translate(0, 0) scale(0.3);
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  50% {
+    -moz-transform: translate(90%, -50%) scale(0.65);
+    -ms-transform: translate(90%, -50%) scale(0.65);
+    -webkit-transform: translate(90%, -50%) scale(0.65);
+    transform: translate(90%, -50%) scale(0.65);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: translate(180%, -100%) scale(1);
+    -ms-transform: translate(180%, -100%) scale(1);
+    -webkit-transform: translate(180%, -100%) scale(1);
+    transform: translate(180%, -100%) scale(1);
+    opacity: 0;
+  }
+}
+@-ms-keyframes sleep {
+  0% {
+    -moz-transform: translate(0, 0) scale(0.3);
+    -ms-transform: translate(0, 0) scale(0.3);
+    -webkit-transform: translate(0, 0) scale(0.3);
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  50% {
+    -moz-transform: translate(90%, -50%) scale(0.65);
+    -ms-transform: translate(90%, -50%) scale(0.65);
+    -webkit-transform: translate(90%, -50%) scale(0.65);
+    transform: translate(90%, -50%) scale(0.65);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: translate(180%, -100%) scale(1);
+    -ms-transform: translate(180%, -100%) scale(1);
+    -webkit-transform: translate(180%, -100%) scale(1);
+    transform: translate(180%, -100%) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes sleep {
+  0% {
+    -moz-transform: translate(0, 0) scale(0.3);
+    -ms-transform: translate(0, 0) scale(0.3);
+    -webkit-transform: translate(0, 0) scale(0.3);
+    transform: translate(0, 0) scale(0.3);
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  50% {
+    -moz-transform: translate(90%, -50%) scale(0.65);
+    -ms-transform: translate(90%, -50%) scale(0.65);
+    -webkit-transform: translate(90%, -50%) scale(0.65);
+    transform: translate(90%, -50%) scale(0.65);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: translate(180%, -100%) scale(1);
+    -ms-transform: translate(180%, -100%) scale(1);
+    -webkit-transform: translate(180%, -100%) scale(1);
+    transform: translate(180%, -100%) scale(1);
+    opacity: 0;
+  }
+}
+.actions {
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+.actions div {
+  width: 20%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+.btn {
+  background: #ff6540;
+  color: #fff;
+  border: 2px solid #d24c2c;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+  margin: 0.5rem 2rem;
+}
+.btn:hover {
+  background: #d24c2c;
+}
+.choose-file {
+  opacity: 0;
+  z-index: 9;
+  position: absolute;
+  top: 0.5rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 44%;
+}
+.caption {
+  text-align: center;
+  margin: 0;
+}

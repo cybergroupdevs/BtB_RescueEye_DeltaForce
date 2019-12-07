@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <title>RescueEye</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="http://localhost:8881/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="center">
+                <div class="box1">Rescue-Eye</div>
+                <div class="box2"></div>
+            </div>
+        </div>
+        <form method="POST"
+              action="/"
+              enctype="multipart/form-data">
+            <p class="caption">Select behavior to train model</p>
+            <section class="selection">
+                <div class="choice">
+                    <label class="radio-container">
+                        <div id="left"
+                             class="face">
+                            <div class="eyes">
+                                <div class="eye-right
+                                "></div>
+                                <div class="eye-right"></div>
+                            </div>
+                        </div>Looking Left
+                        <input type="radio"
+                               name="selType"
+                               value="left">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="choice">
+                    <label class="radio-container">
+                        <div id="right"
+                             class="face">
+                            <div class="eyes">
+                                <div class="eye-left "></div>
+                                <div class="eye-left "></div>
+                            </div>
+                        </div>Looking Right
+                        <input type="radio"
+                               name="selType"
+                               value="right">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="choice">
+                    <label class="radio-container">
+                        <div id="awake"
+                             class="face">
+                            <div class="eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                        </div>Awake
+                        <input type="radio"
+                               name="selType"
+                               value="awake">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="choice">
+                    <label class="radio-container">
+                        <div class="sleeping">
+                            <span>z</span>
+                            <span>z</span>
+                            <span>z</span>
+                        </div>
+                        <div id="sleep"
+                             class="face-sleep">
+                            <div class="eyes-sleep">
+                                <div class="eye-sleep"></div>
+                                <div class="eye-sleep"></div>
+                            </div>
+                        </div>Sleeping
+                        <input type="radio"
+                               name="selType"
+                               value="sleep">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </section>
+            <section class="actions">
+                <div>
+                    <input type="file"
+                           name="imgFile"
+                           accept=".jpg,.png,.PNG,.mp4,.avi"
+                           class="choose-file">
+                    <input type="button"
+                           value="Choose video"
+                           class="btn">
+                    <input class="btn"
+                           type="submit"
+                           value="Upload">
+                    <input class="btn"
+                           type="button"
+                           value="Train Model">
+                    <input class="btn"
+                           type="button"
+                           value="Download Model">
+                </div>
+            </section>
+            </fieldset>
+        </form>
+    </div>
+</body>
+<script>
+    document.querySelector('body')
+        .addEventListener('mousemove', eyeBall)
+    function eyeBall() {
+        var eye = document.querySelectorAll('.eye');
+        eye.forEach(function (eye) {
+            let x = (eye.getBoundingClientRect()).left + (eye.clientWidth / 2);
+            let y = (eye.getBoundingClientRect()).top + (eye.clientHeight / 2);
+            let radian = Math.atan2(event.pageX - x, event.pageY - y);
+            let rot = (radian * (180 / Math.PI) * -1) + 270;
+            eye.style.transform = "rotate(" + rot + "deg)";
+        })
+    }
+</script>
+
+</html>
