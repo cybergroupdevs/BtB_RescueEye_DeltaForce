@@ -15,7 +15,7 @@ body {
   margin: 0 2rem;
 }
 .header {
-  height: 15rem;
+  height: 11rem;
 }
 .center {
   position: absolute;
@@ -30,10 +30,10 @@ body {
   padding: 10px;
   text-transform: capitalize;
   font-family: "Pacifico", cursive;
-  font-size: 3rem;
+  font-size: 2rem;
   transform-style: preserve-3d;
   transform-origin: left;
-  transform: perspective(1000px) rotateY(25deg) translate(30px, 5px);
+  transform: perspective(1000px) rotateY(25deg) translate(15px, 5px);
 }
 .center .box1::before {
   content: "";
@@ -103,8 +103,8 @@ body {
   margin: 1rem;
 }
 .selection .choice {
-  height: 18rem;
-  width: 18rem;
+  height: 14rem;
+  width: 14rem;
   margin: 0.5rem;
   text-align: center;
   font-size: 1.5rem;
@@ -256,7 +256,7 @@ body {
   position: relative;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -276,8 +276,8 @@ body {
 /* Create a custom radio button */
 .checkmark {
   position: absolute;
-  bottom: -1.5rem;
-  left: 1rem;
+  bottom: -1.6rem;
+  left: 0.5rem;
   height: 1.5rem;
   width: 1.5rem;
   background-color: #eee;
@@ -479,16 +479,17 @@ body {
   border: 2px solid #eee;
   border-radius: 0.5rem;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
   position: relative;
+  min-height: 5rem;
 }
 .actions div {
-  width: 20%;
+  width: 100%;
   display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 .btn {
   background: #ff6540;
@@ -500,6 +501,7 @@ body {
   border-radius: 0.5rem;
   transition: 0.3s ease;
   margin: 0.5rem 2rem;
+  width: 12rem;
 }
 .btn:hover {
   background: #d24c2c;
@@ -516,4 +518,5 @@ body {
 .caption {
   text-align: center;
   margin: 0;
+  font-family: "Pacifico", cursive;
 }
