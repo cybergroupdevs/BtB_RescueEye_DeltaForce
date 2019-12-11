@@ -12,6 +12,7 @@
           rel="stylesheet">
     <link rel="stylesheet"
           href="http://localhost:8881/css/style.css">
+    <noscript>Please javascript on you browser</noscript>
 </head>
 
 <body>
@@ -29,47 +30,16 @@
             <section class="selection">
                 <div class="choice">
                     <label class="radio-container">
-                        <div id="left"
-                             class="face">
-                            <div class="eyes">
-                                <div class="eye-right
-                                "></div>
-                                <div class="eye-right"></div>
-                            </div>
-                        </div>Looking Left
-                        <input type="radio"
-                               name="selType"
-                               value="left">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="choice">
-                    <label class="radio-container">
-                        <div id="right"
-                             class="face">
-                            <div class="eyes">
-                                <div class="eye-left "></div>
-                                <div class="eye-left "></div>
-                            </div>
-                        </div>Looking Right
-                        <input type="radio"
-                               name="selType"
-                               value="right">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="choice">
-                    <label class="radio-container">
-                        <div id="awake"
+                        <div id="active"
                              class="face">
                             <div class="eyes">
                                 <div class="eye"></div>
                                 <div class="eye"></div>
                             </div>
-                        </div>Awake
+                        </div>Active
                         <input type="radio"
                                name="selType"
-                               value="awake">
+                               value="active">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -80,16 +50,16 @@
                             <span>z</span>
                             <span>z</span>
                         </div>
-                        <div id="sleep"
+                        <div id="inactive"
                              class="face-sleep">
                             <div class="eyes-sleep">
                                 <div class="eye-sleep"></div>
                                 <div class="eye-sleep"></div>
                             </div>
-                        </div>Sleeping
+                        </div>Distracted
                         <input type="radio"
                                name="selType"
-                               value="sleep">
+                               value="inactive">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -98,18 +68,22 @@
                 <div>
                     <input type="file"
                            name="imgFile"
+                           onchange="validateFileType(this)"
                            accept=".jpg,.png,.PNG,.mp4,.avi"
                            class="choose-file">
                     <input type="button"
                            value="Choose video"
                            class="btn">
                     <input class="btn"
+                           id="upload"
                            type="submit"
                            value="Upload">
                     <input class="btn"
+                           id="train-model"
                            type="button"
                            value="Train Model">
                     <input class="btn"
+                           id="download"
                            type="button"
                            value="Download Model">
                 </div>
@@ -117,20 +91,8 @@
             </fieldset>
         </form>
     </div>
+    <script type="text/javascript"
+            src="http://localhost:8881/scripts/script.js"></script>
 </body>
-<script>
-    document.querySelector('body')
-        .addEventListener('mousemove', eyeBall)
-    function eyeBall() {
-        var eye = document.querySelectorAll('.eye');
-        eye.forEach(function (eye) {
-            let x = (eye.getBoundingClientRect()).left + (eye.clientWidth / 2);
-            let y = (eye.getBoundingClientRect()).top + (eye.clientHeight / 2);
-            let radian = Math.atan2(event.pageX - x, event.pageY - y);
-            let rot = (radian * (180 / Math.PI) * -1) + 270;
-            eye.style.transform = "rotate(" + rot + "deg)";
-        })
-    }
-</script>
 
 </html>

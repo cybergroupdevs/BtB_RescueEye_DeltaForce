@@ -16,7 +16,10 @@ class uploadRequestHandler(RequestHandler):
 
     def post(self):
         selType = self.get_argument('selType')
-        dirName = f'assets/img/{selType}'
+        dateStamp = time.strftime('%Y-%m-%d', time.gmtime())
+        sessionId = self.get_cookie('sessionId')
+        dirName = f'assets/videos/{dateStamp}'
+
         # Create target directory & all intermediate directories if don't exists
         if not os.path.exists(dirName):
             os.makedirs(dirName)
@@ -25,16 +28,12 @@ class uploadRequestHandler(RequestHandler):
         for f in files:
             index = f.filename.find('.')
             ts = time.gmtime()
-            # append timestamp and open file
-            fn = f"{f.filename[:index]}_{time.strftime('%Y-%m-%d_%H-%M-%S', ts)}{ f.filename[index:]}"
+            fn = f"{sessionId}_{time.strftime('%Y-%m-%d_%H-%M-%S', ts)}_{f.filename[:index]}_{selType}{ f.filename[index:]}"
             fh = open(f"{dirName}/{fn}", "wb")
             fh.write(f.body)
             fh.close()
 
-        self.write(f"http://localhost:8881/img/{selType}/{fn}")
-        # send this path to training model asynchronously
-
-        # and save the response in file system under /models
+        # self.write(f"http://localhost:8881/videos/{dateStamp}/{fn}")
 
 
 # class trainRequestHandler(RequestHandler):
@@ -50,11 +49,11 @@ class uploadRequestHandler(RequestHandler):
 if __name__ == "__main__":
     app = Application([
         (r"/", uploadRequestHandler),
-        # (r"/train", trainRequestHandler),
         (r"/img/(.*)", StaticFileHandler, {"path": "assets/img"}),
         (r"/css/(.*)", StaticFileHandler, {"path": "assets/css"}),
         (r"/scripts/(.*)", StaticFileHandler,
-         {"path": "assets/scripts"})
+         {"path": "assets/scripts"}),
+        (r"/videos/(.*)", StaticFileHandler, {"path": "assets/videos"})
     ])
 
     app.listen(8881)
