@@ -54,16 +54,20 @@ def ConvertVideoToFrame(videopath, mode, rotate):
             print('facefound')
             
             # file name
-            filename =  mode + '_' + time + '_' + str(i)+'.jpg'
+            filename =  f'{mode}_{time}_{i}.jpg'
             
             # save image to path
             cv2.imwrite(path + '/' + filename, frame)
             i+=1
             print(path + '/' + filename)
+            
+            # for testing
+            #if i > 5:
+            #    break
         else:
             print('no facefound')
     if i > 0:
-        print('Total Image :' + i)
+        print(f'Total Image :{i}')
     cap.release()
     return i
 
