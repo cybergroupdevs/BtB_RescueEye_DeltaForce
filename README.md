@@ -56,7 +56,7 @@ Run and build the Android App using build button from Android App.
 
 [Android - Java- - Kotlin] - Used for Android App
 
-
+For using Android Application. After downloading change your Project path in CMakeLists.txt. Also download OpenCV for Android SDK from https://docs.opencv.org/2.4/doc/tutorials/introduction/android_binary_package/O4A_SDK.html and change path in CMakeLists.txt
 
 # Contributors
 
