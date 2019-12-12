@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RescueEye</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="request_permission">This Application needs camera permission to proceed.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="initializing_text">Initializing detection.. </string>
+</resources>
