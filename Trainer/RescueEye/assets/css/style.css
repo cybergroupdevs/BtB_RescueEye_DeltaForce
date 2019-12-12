@@ -486,8 +486,7 @@ body {
   min-height: 5rem;
 }
 .actions div {
-  width: 100%;
-  display: flex;
+   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
@@ -506,13 +505,14 @@ body {
 .btn:hover {
   background: #d24c2c;
 }
-.choose-file {
-  opacity: 0;
-  z-index: 9;
-  position: absolute;
-  top: 0.5rem;
-  margin: 0 auto;
-  width: 44%;
+.choose-file{
+   opacity: 0;
+    z-index: 9;
+    position: absolute;
+    top: 0.5rem;
+    margin: 8px auto;
+       height: 50px;
+    cursor: pointer;
 }
 .caption {
   text-align: center;
