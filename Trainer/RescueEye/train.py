@@ -109,12 +109,12 @@ def learn(video,mode):
     if(totalimages > 0):
 
         list_of_folders = glob.glob(os.path.join(g.TENSOR_MODEL_PATH,  f'*{g.TENSOR_MODEL_SUFFIX}'))
-        latest_file = None
+        latest_folder = None
         if len(list_of_folders) > 0:
             # Get Latest Model
-            latest_file = max(list_of_folders, key=os.path.getctime)
+            latest_folder = max(list_of_folders, key=os.path.getctime)
         # Load Model
-        model = loadmodel(latest_file)
+        model = loadmodel(latest_folder)
         model.summary()
         # Train
         train(model, mode)
@@ -122,4 +122,4 @@ def learn(video,mode):
         savemodel(model)
 
 # sample
-learn('samples/WIN_20191211_16_03_04_Pro.mp4', 'active')
+# learn('samples/WIN_20191211_16_03_04_Pro.mp4', 'active')

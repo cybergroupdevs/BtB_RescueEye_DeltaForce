@@ -10,7 +10,7 @@ let trainModelBtn = document.getElementById("train-model");
 let downloadBtn = document.getElementById("download");
 disableButton(uploadBtn, true);
 disableButton(trainModelBtn, true);
-disableButton(downloadBtn, true);
+disableButton(downloadBtn, false);
 
 // @eyeBallHandler
 document.querySelector("body").addEventListener("mousemove", eyeBallHandler);
