@@ -18,9 +18,9 @@ CMake
 
 Rescue-Eye is the product which is mainly meant for safe driving.It is Driver Distraction Detection using facial monitoring system​.It comprises of two different module :-
 
-1.Android App - Feeder for Neural Network Used by Driver.
+1. Android App - Feeder for Neural Network Used by Driver.
 
-2. Trainer Model App - Trainer our Neural model and will responses according to training provided.
+2. Trainer Model App - Trainer our Neural model and send responses according to training provided.
 
 # Setup
 
@@ -38,11 +38,11 @@ Run and build the Android App using build button from Android App.
 
 # Tech
 
-[HTML5] - HTMLfor the frontend
+[HTML5] - HTML for the frontend
 
-[CSS3] - CSS3 used to enhance the html
+[CSS3] - CSS3 used to enhance the HTML
 
-[Vanilla Js] - Used to in frontend script
+[Vanilla Js] - Used  in frontend scripting
 
 [Python] - Backend is based on Python
 
@@ -54,11 +54,12 @@ Run and build the Android App using build button from Android App.
 
 [TensorFlow] - Library Used for Neural Network
 
-[Android - Java- - Kotlin] - Android App
+[Android - Java- - Kotlin] - Used for Android App
 
 
 
 # Contributors
+
 Anusha
 
 Aman Sharma

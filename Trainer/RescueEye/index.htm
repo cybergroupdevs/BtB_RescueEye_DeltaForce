@@ -67,14 +67,18 @@
             </section>
             <section class="actions">
                 <div>
-                    <input type="file"
+                  <div class="upload-btn-wrapper">
+   <input type="button"
+                           value="Choose video"
+                           class="btn">
+ <input type="file"
                            name="imgFile"
                            onchange="validateFileType(this)"
                            accept=".jpg,.png,.PNG,.mp4,.avi"
                            class="choose-file">
-                    <input type="button"
-                           value="Choose video"
-                           class="btn">
+</div>
+                    
+                   
                     <input class="btn"
                            id="upload"
                            type="submit"
