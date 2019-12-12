@@ -1,0 +1,3 @@
+We have covered manual test cases scenarios for validating that our model is trained accurately and giving desired result to the users to ensure his distraction.
+
+Test cases are covered in Testing video in the same folder.
