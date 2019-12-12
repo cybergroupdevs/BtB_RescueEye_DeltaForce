@@ -29,13 +29,19 @@ predictor = dlib.shape_predictor(g.PREDICTOR_MODEL_PATH)
 def ConvertVideoToFrame(videopath, mode, rotate):
 
     time = datetime.datetime.now().strftime(g.DATE_TIME_FORMAT)
+    print(videopath)
     # Get Video From File
     cap = cv2.VideoCapture(videopath)
     i=0
+    # Path to save frame
+    path = g.IMAGE_PATH + '/' + mode
+    if not os.path.exists(path):
+        os.makedirs(path)
     # If Valid Video And Have Frames
     while(cap.isOpened()):
         # Get Frame from Video
         ret, frame = cap.read()
+        print('creating frame')
         
         # Check If Frame Roatation Required
         if rotate != None:
@@ -45,10 +51,8 @@ def ConvertVideoToFrame(videopath, mode, rotate):
         faces = detector(frame, 1)
         # Check If Face Found
         if len(faces) > 0:
-            # Path to save frame
-            path = g.IMAGE_PATH + '/' + mode
-            if not os.path.exists(path):
-                os.makedirs(path)
+            print('facefound')
+            
             # file name
             filename =  mode + '_' + time + '_' + str(i)+'.jpg'
             
@@ -56,6 +60,8 @@ def ConvertVideoToFrame(videopath, mode, rotate):
             cv2.imwrite(path + '/' + filename, frame)
             i+=1
             print(path + '/' + filename)
+        else:
+            print('no facefound')
     if i > 0:
         print('Total Image :' + i)
     cap.release()

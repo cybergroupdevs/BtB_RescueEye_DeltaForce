@@ -82,7 +82,7 @@ def loadmodel(file):
         return m
 
 def learn(video,mode):
-    totalimages = 1#evi.ConvertVideoToFrame(video, mode, None)
+    totalimages = evi.ConvertVideoToFrame(video, mode, None)
     if(totalimages > 0):
         list_of_folders = glob.glob(os.path.join(g.TENSOR_MODEL_PATH,  '*' + g.TENSOR_MODEL_SUFFIX))
         latest_file = None
