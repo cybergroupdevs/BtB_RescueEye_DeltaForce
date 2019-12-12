@@ -14,9 +14,10 @@ Introduction
 Rescue-Eye is the product which is mainly meant for safe driving.It is Driver Distraction Detection using facial monitoring system​.It comprises of two different module : -
 1.Android App - Feeder for Neural Network Used by Driver.
 2. Trainer Model App - Trainer our Neural model and will responses according to training provided.
+
 Setup
 Git Clone
-Install Python is not
+Install Python if not
 Install dependencies - Use pip to install dependencies
 Run Command for Trainer Model App - python index.py
 Run and build the Android App using build button from Android App
