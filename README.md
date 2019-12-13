@@ -20,7 +20,7 @@ Rescue-Eye is the product which is mainly meant for safe driving.It is Driver Di
 
 1. Android App - Feeder for Neural Network Used by Driver.
 
-2. Trainer Model App - Trainer our Neural model and send responses according to training provided.
+2. Trainer Model App - Traines our Neural model and send responses according to training provided.
 
 # Setup
 
@@ -66,7 +66,7 @@ Aman Sharma
 
 Bijay Shah
 
-Nikhil Rustogi
+Nikhil Rustagi
 
 Sonali Chawla
 
